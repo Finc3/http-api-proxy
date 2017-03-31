@@ -5,7 +5,7 @@ A reverse proxy designed for use with rate limited APIs.
 ## Installation
 
     npm install http-api-proxy
-    
+
 ## Usage
 
 Any requests to the proxy must have the `Host` header set to the upstream host.
@@ -13,11 +13,7 @@ Any requests to an upstream host that the proxy has not been configured for will
 
 To start a proxy:
 
-    http-api-proxy -c <config-file.json>
-
-If the config file is not specified,
-it defaults to `~/.config/http-api-proxy/config.json`
-(or the appropriate value if you've set `$XDG_CONFIG_HOME`).
+    http-api-proxy
 
 The config file should be a JSON file with the following properties:
 
@@ -52,7 +48,7 @@ where config.json looks like:
         ],
         "httpPort": 8080
     }
-    
+
 Then, to use the proxy:
 
     curl http://localhost:8080/ -H"Host: example.com"
