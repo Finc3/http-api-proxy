@@ -15,14 +15,7 @@ To start a proxy:
 
     http-api-proxy
 
-The config file should be a JSON file with the following properties:
-
-
-cacheAge: process.env.CACHE_AGE,
-cachePath: process.env.CACHE_PATH,
-httpPort: parseInt(process.env.HTTP_PORT) || 8080,
-httpsPort: parseInt(process.env.PORT) || 8081,
-defaultInterval: parseInt(DEFAULT_INTERVAL) || 55
+Configuration is made with environment variables.
 
 * `HTTP_PORT`: The port on which the HTTP proxy server should listen. Default: 8080
   The server on this port will only proxy sites where the protocol is HTTP.
@@ -36,15 +29,14 @@ defaultInterval: parseInt(DEFAULT_INTERVAL) || 55
   * The value of the element should be the interval. Ensure that at least `interval` milliseconds elapse between each request to this site.
 * `CACHE_AGE` (optional): If set, successful GET requests will be cached for `cacheAge` milliseconds.
 * `CACHE_PATH` (optional): If set, the specified path will be used to persist the cache.
-* `DEFAULT_INTERVAL` (optional): If set, any requests to an upstream host that have not been explicitly configured will use this value for `interval`. Default: 55ms
 
 ## Examples
 
 Suppose you want to access the particular API https://example.com at most once per second:
 
-    PORT=9000 http-api-proxy
+    SITES='{"https://example.com": 1000, "https://test.com:8098": 55}' PORT=9000 http-api-proxy
 
-    {"https://example.com": 1000, "https://test.com:8098": 55}
+
 
 Then, to use the proxy:
 
