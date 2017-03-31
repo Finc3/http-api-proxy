@@ -1,11 +1,11 @@
 {
-  "name": "http-api-proxy",
-  "version": "0.2.4",
+  "name": "http-api-proxy2",
+  "version": "0.1.0",
   "dependencies": {
     "connect": "~2.7.11",
     "http-proxy": "~0.10.2",
     "rate-limit": "~0.1.0",
-    "connect-response-cache": "~0.2.1",
+    "connect-response-cache-updated": "latest",
     "mkdirp": "~0.3.5"
   },
   "devDependencies": {
