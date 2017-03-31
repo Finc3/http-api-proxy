@@ -4,7 +4,7 @@ A reverse proxy designed for use with rate limited APIs.
 
 ## Installation
 
-    npm install http-api-proxy
+    npm install http-api-proxy2
 
 ## Usage
 
@@ -21,7 +21,7 @@ Configuration is made with environment variables.
   The server on this port will only proxy sites where the protocol is HTTP.
 * `PORT` (optional): If set, listen on this port and proxy sites where the protocol is HTTPS. Default: 8081
   Note that the proxy server itself still uses HTTP rather than HTTPS.
-* `SITES`: A JSON encoded list (array) of sites that the proxy can delegate requests to.
+* `SITES`: A JSON encoded object of sites that the proxy can delegate requests to.
   If a request is made for a site that is not referenced here,
   the proxy will respond with a 500 error.
   Each element should have the following properties:
