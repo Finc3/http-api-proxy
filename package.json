@@ -18,6 +18,7 @@
     "http-api-proxy": "bin/http-api-proxy"
   },
   "scripts": {
+    "start": "http-api-proxy",
     "pretest": "eslint lib tests",
     "test": "nodeunit tests/*.tests.js"
   },
